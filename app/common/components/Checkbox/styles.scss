@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+.checkbox {
+  border: 1px solid $blue;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background: #fff;
+  &:checked {
+    background: $blue;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
