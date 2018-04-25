@@ -18,6 +18,7 @@ const MoviesListPage = ({ movies, onMovieCardClick, t }) => (
       {movies.map(movie => (
         <div className={styles.item} key={movie.id}>
           <MovieCard movie={movie} onClick={() => onMovieCardClick(movie)} />
+          {movie.favorite && <span className={styles.isFavorite}>❤️</span>}
         </div>
       ))}
     </div>

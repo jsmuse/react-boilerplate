@@ -31,7 +31,13 @@ const MovieForm = ({ handleSubmit, t }) => (
       <Field component={FormField} inputComponent={TextInput} name="director" />
     </FormRow>
     <FormRow>
-      <Checkbox id="favorite" label={t('Add to favorite')} />
+      <Field
+        component={FormField}
+        inputComponent={Checkbox}
+        name="favorite"
+        id="favorite"
+        label={t('Add to favorite')}
+      />
     </FormRow>
     <FormRow>
       <Button type="submit">{t('Create')}</Button>
