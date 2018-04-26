@@ -1,0 +1,47 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-04-23 01:52+0300\n"
+"PO-Revision-Date: 2018-04-25 16:01+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Required field"
+msgstr "Champ obligatoire"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Poster url"
+msgstr "URL"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Year"
+msgstr "Année"
+
+msgid "Director"
+msgstr "Directeur"
+
+msgid "Create"
+msgstr "Créer"
+
+msgid "Create new movie"
+msgstr "Créer un nouveau"
+
+msgid "Back to the list of movies"
+msgstr "retour à la liste des épreuves"
+
+msgid "Add new movie"
+msgstr "Ajouter un nouveau film"
+
+msgid "Page Not Found"
+msgstr "Page non trouvée"
