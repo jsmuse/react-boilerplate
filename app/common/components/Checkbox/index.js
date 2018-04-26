@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'withStyles';
 import { compose } from 'recompose';
 
 import styles from './styles.scss';
 
-const TextInput = ({ label, id, ...rest }) => (
-  <div className={styles.container}>
+const Checkbox = ({ label, id, ...rest }) => (
+  <Fragment>
     <input className={styles.checkbox} type="checkbox" id={id} {...rest} />
-    <label htmlFor={id}>{label}</label>
-  </div>
+    <label className={styles.label} htmlFor={id}>
+      {label}
+    </label>
+  </Fragment>
 );
 
-TextInput.propTypes = {
-  error: PropTypes.bool,
+Checkbox.propTypes = {
+  checked: PropTypes.bool,
 };
 
-export default compose(withStyles(styles))(TextInput);
+export default compose(withStyles(styles))(Checkbox);

@@ -17,7 +17,7 @@ const MoviesDetailsPage = ({ onDelete, movie = {}, t }) => (
   <div className={styles.root}>
     <div className={styles.poster}>
       <Poster src={movie.poster} title={movie.title} />
-      {movie.favorite && <span className={styles.isFavorite}>❤️</span>}
+      {movie.is_favorite && <span className={styles.isFavorite}>❤️</span>}
     </div>
     <div className={styles.content}>
       <div className={styles.title}>{movie.title}</div>
