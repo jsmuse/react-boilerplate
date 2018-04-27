@@ -27,7 +27,13 @@ const ActorsDetailsPage = ({ onDelete, actor = {}, t }) => (
         <p>
           <Link to="/actors">{t('Back to the list of actors')}</Link>
         </p>
-        {console.log(actor.films)}
+        <p>
+          {actor.films.map(item => (
+            <Link to={`/movies/${item.id}`} key={item.id}>
+              {item.title}
+            </Link>
+          ))}
+        </p>
 
         <Button edit to={`/actors/${actor.id}/edit`}>
           {t('Edit')}
