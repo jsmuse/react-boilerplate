@@ -5,10 +5,10 @@ import { compose } from 'recompose';
 
 import styles from './styles.scss';
 
-const Checkbox = ({ label, ...rest }) => (
+const Checkbox = ({ label, checked, ...rest }) => (
   <React.Fragment>
     <label className={styles.label}>
-      <input className={styles.checkbox} type="checkbox" {...rest} />
+      <input checked={checked} className={styles.checkbox} type="checkbox" {...rest} />
       {label}
     </label>
   </React.Fragment>
@@ -16,7 +16,6 @@ const Checkbox = ({ label, ...rest }) => (
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,
-  id: PropTypes.string.isRequired,
   label: PropTypes.string,
 };
 
