@@ -5,7 +5,7 @@ import { find, findIndex, omit } from 'lodash';
 const router = new Express.Router();
 router.use(Express.json());
 
-const actors = [
+let actors = [
   {
     id: uuid(),
     name: 'Robert Downey Jr.',
@@ -14,7 +14,6 @@ const actors = [
       'https://ia.media-imdb.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UX214_CR0,0,214,317_AL_.jpg',
     description:
       'Robert Downey Jr. has evolved into one of the most respected actors in Hollywood. With an amazing list of credits to his name, he has managed to stay new and fresh even after over four decades in the business.',
-    films: movies,
   },
   {
     id: uuid(),
@@ -24,7 +23,6 @@ const actors = [
       'https://ia.media-imdb.com/images/M/MV5BMTQ3ODEyNjA4Nl5BMl5BanBnXkFtZTgwMTE4ODMyMjE@._V1_UX214_CR0,0,214,317_AL_.jpg',
     description:
       'With his breakthrough performance as Eames in Christopher Nolan`s science fiction thriller, English actor Tom Hardy has been brought to the attention of mainstream audiences worldwide.',
-    films: movies,
   },
   {
     id: uuid(),
@@ -34,11 +32,10 @@ const actors = [
       'https://ia.media-imdb.com/images/M/MV5BMTQzNjU3MDczN15BMl5BanBnXkFtZTYwNzY2Njc4._V1_UX214_CR0,0,214,317_AL_.jpg',
     description:
       'Julia Fiona Roberts never dreamed she would become the most popular actress in America. She was born in Smyrna, Georgia, to Betty Lou (Bredemus) and Walter Grady Roberts, one-time actors and playwrights, and is of English, Irish, Scottish, Welsh, German, and Swedish descent.',
-    films: movies,
   },
 ];
 
-const movies = [
+let movies = [
   {
     id: uuid(),
     title: 'The Shawshank Redemption',
@@ -125,6 +122,62 @@ router.delete('/movies/:id', (req, res) => {
   movies = movies.filter(i => i.id !== req.params.id);
   return res.json({
     data: movies,
+  });
+});
+
+/* *** */
+
+router.get('/actors', (req, res) => {
+  res.json({
+    data: actors,
+  });
+});
+
+router.post('/actors', (req, res) => {
+  const newActors = {
+    ...req.body.actor,
+    id: uuid(),
+  };
+  actors.push(newActors);
+
+  res.json({
+    data: newActors,
+  });
+});
+
+router.get('/actors/:id', (req, res) => {
+  const actor = find(actors, { id: req.params.id });
+  if (!actor) {
+    return res.sendStatus(404);
+  }
+  return res.json({
+    data: actor,
+  });
+});
+
+router.put('/actors/:id', (req, res) => {
+  const actorIndex = findIndex(actors, { id: req.params.id });
+
+  if (actorIndex === -1) {
+    return res.sendStatus(404);
+  }
+
+  const updatedActor = omit(req.body.actor, ['id']);
+  actors[actorIndex] = { ...actors[actorIndex], ...updatedActor };
+
+  return res.json({
+    data: actors[actorIndex],
+  });
+});
+
+router.delete('/actors/:id', (req, res) => {
+  const actor = find(actors, { id: req.params.id });
+  if (!actor) {
+    return res.sendStatus(404);
+  }
+  actors = actors.filter(i => i.id !== req.params.id);
+  return res.json({
+    data: actors,
   });
 });
 
