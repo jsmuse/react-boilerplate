@@ -5,7 +5,40 @@ import { find, findIndex, omit } from 'lodash';
 const router = new Express.Router();
 router.use(Express.json());
 
-let movies = [
+const actors = [
+  {
+    id: uuid(),
+    name: 'Robert Downey Jr.',
+    born: 'April 4, 1965',
+    photo:
+      'https://ia.media-imdb.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UX214_CR0,0,214,317_AL_.jpg',
+    description:
+      'Robert Downey Jr. has evolved into one of the most respected actors in Hollywood. With an amazing list of credits to his name, he has managed to stay new and fresh even after over four decades in the business.',
+    films: movies,
+  },
+  {
+    id: uuid(),
+    name: 'Tom Hardy',
+    born: 'September 15, 1977',
+    photo:
+      'https://ia.media-imdb.com/images/M/MV5BMTQ3ODEyNjA4Nl5BMl5BanBnXkFtZTgwMTE4ODMyMjE@._V1_UX214_CR0,0,214,317_AL_.jpg',
+    description:
+      'With his breakthrough performance as Eames in Christopher Nolan`s science fiction thriller, English actor Tom Hardy has been brought to the attention of mainstream audiences worldwide.',
+    films: movies,
+  },
+  {
+    id: uuid(),
+    name: 'Julia Roberts',
+    born: 'October 28, 1967',
+    photo:
+      'https://ia.media-imdb.com/images/M/MV5BMTQzNjU3MDczN15BMl5BanBnXkFtZTYwNzY2Njc4._V1_UX214_CR0,0,214,317_AL_.jpg',
+    description:
+      'Julia Fiona Roberts never dreamed she would become the most popular actress in America. She was born in Smyrna, Georgia, to Betty Lou (Bredemus) and Walter Grady Roberts, one-time actors and playwrights, and is of English, Irish, Scottish, Welsh, German, and Swedish descent.',
+    films: movies,
+  },
+];
+
+const movies = [
   {
     id: uuid(),
     title: 'The Shawshank Redemption',
