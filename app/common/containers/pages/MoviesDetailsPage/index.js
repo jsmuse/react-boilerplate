@@ -28,7 +28,7 @@ const MoviesDetailsPage = ({ onDelete, movie = {}, t }) => (
           <Link to="/movies">{t('Back to the list of movies')}</Link>
         </p>
 
-        <Button edit to={`/movies/${movie.id}/edit`}>
+        <Button name="edit" edit to={`/movies/${movie.id}/edit`}>
           {t('Edit')}
         </Button>
 

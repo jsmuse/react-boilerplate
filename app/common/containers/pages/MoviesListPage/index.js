@@ -16,7 +16,7 @@ const MoviesListPage = ({ movies, onMovieCardClick, t }) => (
   <div className={styles.root}>
     <div className={styles.list}>
       {movies.map(movie => (
-        <div className={styles.item} key={movie.id}>
+        <div className={styles.item} key={movie.id} name="card">
           <MovieCard movie={movie} onClick={() => onMovieCardClick(movie)} />
         </div>
       ))}

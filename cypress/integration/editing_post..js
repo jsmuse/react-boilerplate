@@ -3,10 +3,10 @@ describe('Editing post test', () => {
     cy.visit('/movies/');
 
     cy
-      .get('div')
+      .get('div[name=card]')
       .first()
       .click();
-    cy.get('a').click();
+    cy.get('a[name=edit]').click();
 
     cy.get('input[name=title]').type('Test title');
 
