@@ -28,11 +28,16 @@ const MoviesDetailsPage = ({ onDelete, movie = {}, t }) => (
           <Link to="/movies">{t('Back to the list of movies')}</Link>
         </p>
 
-        <Button name="edit" edit to={`/movies/${movie.id}/edit`}>
+        <Button
+          data-locator-id="movie-edit-button"
+          name="edit"
+          edit
+          to={`/movies/${movie.id}/edit`}
+        >
           {t('Edit')}
         </Button>
 
-        <Button remove onClick={onDelete}>
+        <Button data-locator-id="movie-remove-button" remove onClick={onDelete}>
           {t('Remove')}
         </Button>
       </div>

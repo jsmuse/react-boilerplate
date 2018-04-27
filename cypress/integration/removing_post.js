@@ -3,9 +3,9 @@ describe('Removing post test', () => {
     cy.visit('/movies/');
 
     cy
-      .get('div[name=card]')
+      .get('div[data-location-id=card]')
       .first()
       .click();
-    cy.get('button').click();
+    cy.get('button[data-locator-id=movie-remove-button]').click();
   });
 });
